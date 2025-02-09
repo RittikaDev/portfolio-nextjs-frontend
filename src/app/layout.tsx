@@ -4,6 +4,7 @@ import "./globals.css";
 import { Outfit as OutfitFont, Ovo as OvoFont } from "next/font/google";
 import { ThemeContextProvider } from "@/context/theme-context";
 import { ThemeSwitch } from "@/components/modules/theme-switch";
+import { Toaster } from "react-hot-toast";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Outfit: any = OutfitFont({
@@ -38,6 +39,7 @@ export default async function RootLayout({
           {/* IF YOU SHOW NAVBAR ALL THE TIME EVEN DURING DASHBOARD, IF NOT COMMENT OUT */}
           {/* <Navbar session={session} /> */}
           <div className="min-h-screen ">{children}</div>
+          <Toaster position="top-right" />
           <ThemeSwitch />
         </ThemeContextProvider>
       </body>
