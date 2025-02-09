@@ -1,10 +1,20 @@
+import { File, MessageCircle } from "lucide-react";
 import Link from "next/link";
-import { FaUser, FaCog, FaHome } from "react-icons/fa";
+import { FaHome, FaTasks } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
     <div className="bg-slate-100 min-h-screen p-4 rounded-xl">
       <ul className="space-y-4">
+        <li>
+          <Link
+            href="/"
+            className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-200 text-gray-700"
+          >
+            <FaHome className="h-5 w-5" />
+            <span>Home</span>
+          </Link>
+        </li>
         <li>
           <Link
             href="/dashboard"
@@ -16,20 +26,29 @@ const Sidebar = () => {
         </li>
         <li>
           <Link
-            href="/dashboard/user-info"
+            href="/dashboard/projects"
             className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-200 text-gray-700"
           >
-            <FaUser className="h-5 w-5" />
-            <span>User Info</span>
+            <FaTasks className="h-5 w-5" />
+            <span>Projects</span>
           </Link>
         </li>
         <li>
           <Link
-            href="/dashboard/settings"
+            href="/dashboard/blogs"
             className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-200 text-gray-700"
           >
-            <FaCog className="h-5 w-5" />
-            <span>Settings</span>
+            <File className="h-5 w-5" />
+            <span>Blogs</span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/dashboard/messages"
+            className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-200 text-gray-700"
+          >
+            <MessageCircle className="h-5 w-5" />
+            <span>Messages</span>
           </Link>
         </li>
       </ul>

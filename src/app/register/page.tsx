@@ -2,13 +2,13 @@
 "use client";
 
 import { registerUser } from "@/utils/actions/registerUser";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export type UserData = {
-  username: string;
+  name: string;
   email: string;
   password: string;
 };
@@ -17,7 +17,7 @@ const RegisterPage = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: {},
   } = useForm<UserData>();
 
   const router = useRouter();
@@ -28,12 +28,12 @@ const RegisterPage = () => {
     try {
       const res = await registerUser(data);
       if (res.success) {
-        alert(res.message);
+        toast.success(res.message);
         router.push("/login");
       }
     } catch (err: any) {
       console.error(err.message);
-      throw new Error(err.message);
+      toast.error("Failed to register");
     }
   };
 
@@ -42,18 +42,8 @@ const RegisterPage = () => {
       <h1 className="text-center text-4xl font-bold mb-5">
         Register <span className="text-teal-500">Now</span>
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div>
-          <Image
-            src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg?t=st=1710081713~exp=1710085313~hmac=f637c194f1f143e63a84950cbf978997453777c872adf4aebbbecdaa445601a1&w=740"
-            width={500}
-            height={200}
-            alt="login page"
-            className="w-full h-[85%] object-cover"
-          />
-        </div>
-
-        <div className="w-[80%] mx-auto bg-white p-6 shadow-lg rounded-lg">
+      <div className="items-center">
+        <div className="w-[40%] mx-auto bg-white p-6 shadow-lg rounded-lg">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
               <label className="block text-gray-700 font-medium mb-2">
@@ -61,7 +51,7 @@ const RegisterPage = () => {
               </label>
               <input
                 type="text"
-                {...register("username")}
+                {...register("name")}
                 placeholder="User Name"
                 className="w-full p-3 border border-gray-300 rounded "
                 required
