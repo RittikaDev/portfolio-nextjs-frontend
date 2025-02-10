@@ -54,7 +54,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
 			</div>
 			<nav
 				className={`w-full fixed px-5 lg:px-8 xl:px-[8%] pb-4 flex items-center justify-between z-50 dark:bg-gray-900 dark:text-white ${
-					isScroll ? "bg-white  bg-opacity-50 backdrop-blur-lg shadow-sm" : ""
+					isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm" : ""
 				}`}
 			>
 				<a href="#top">
@@ -66,7 +66,9 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
 				</a>
 				<ul
 					className={`hidden md:flex items-center gap-6 lg-gap-8 rounded-full px-12 py-3 ${
-						!isScroll ? "bg-white shadow-sm bg-opacity-50" : ""
+						!isScroll
+							? "bg-white dark:bg-slate-800 shadow-sm bg-opacity-50"
+							: ""
 					}`}
 				>
 					<li>
@@ -106,22 +108,20 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
 
 				<div>
 					{session?.user ? (
-						<a
-							href="#"
-							onClick={handleLogout} // Logout handler
-							className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo 
-              transition-all duration-300 hover:bg-gray-900 hover:text-white hover:border-gray-900 hover:scale-105"
+						<Link
+							href="/"
+							onClick={handleLogout}
+							className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo transition-all duration-300 hover:bg-gray-900 hover:text-white hover:border-gray-900 hover:scale-105"
 						>
 							LogOut
-						</a>
+						</Link>
 					) : (
-						<a
+						<Link
 							href="/login"
-							className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo 
-                transition-all duration-300 hover:bg-gray-900 hover:text-white hover:border-gray-900 hover:scale-105"
+							className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo transition-all duration-300 hover:bg-gray-900 hover:text-white hover:border-gray-900 hover:scale-105"
 						>
 							Login
-						</a>
+						</Link>
 					)}
 				</div>
 				{/* MOVILE MENU */}

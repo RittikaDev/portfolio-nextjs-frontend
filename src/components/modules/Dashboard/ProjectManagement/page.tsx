@@ -136,9 +136,9 @@ const DashboardProjectTable = () => {
 	};
 
 	return (
-		<div className="p-6">
-			<div className="flex justify-between items-center mb-4">
-				<h1 className="text-xl font-semibold">Projects</h1>
+		<div className="p-6 ">
+			<div className="flex justify-between items-center mb-4 ">
+				<h1 className=" font-semibold">Projects</h1>
 				<Button
 					onClick={() => {
 						setIsEditing(false);

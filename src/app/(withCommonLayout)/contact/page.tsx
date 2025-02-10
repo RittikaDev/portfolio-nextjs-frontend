@@ -72,7 +72,7 @@ const Contact = () => {
 		>
 			{isClient ? (
 				<div className="max-w-7xl mx-auto">
-					<h1 className="mb-8 pt-36 text-center font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent  dark:from-white dark:to-slate-900/10">
+					<h1 className="pb-20 pt-36 text-center font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent dark:from-white dark:to-slate-900/10">
 						Let&apos;s have a chat!
 					</h1>
 

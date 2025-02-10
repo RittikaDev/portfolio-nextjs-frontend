@@ -18,7 +18,7 @@ const AboutMe = () => {
 				<div className="flex justify-center">
 					<div className="md:col-span-4 space-y-6 text-center md:text-left">
 						<div className="space-y-4 flex flex-col items-center text-center">
-							<h1 className="font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent  dark:from-white dark:to-slate-900/10">
+							<h1 className="font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent dark:from-white dark:to-slate-900/10">
 								About Me
 							</h1>
 							<p className="text-muted-foreground leading-relaxed max-w-2xl">

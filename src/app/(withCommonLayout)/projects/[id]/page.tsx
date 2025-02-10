@@ -118,7 +118,10 @@ const ProjectDetails = async ({ params }: IProps) => {
 									<span>Frontend:</span>
 									<ul className="flex space-x-2">
 										{data?.frontend?.technologies?.map((tech: string) => (
-											<li key={tech} className="bg-gray-100 p-2 rounded-md">
+											<li
+												key={tech}
+												className="bg-gray-100 dark:bg-slate-800 dark:text-slate-300 p-2 rounded-md"
+											>
 												{tech}
 											</li>
 										))}
@@ -131,7 +134,10 @@ const ProjectDetails = async ({ params }: IProps) => {
 									<span>Backend:</span>
 									<ul className="flex space-x-2">
 										{data?.backend?.technologies?.map((tech: string) => (
-											<li key={tech} className="bg-gray-100 p-2 rounded-md">
+											<li
+												key={tech}
+												className="bg-gray-100 dark:bg-slate-800 dark:text-slate-300 p-2 rounded-md"
+											>
 												{tech}
 											</li>
 										))}
@@ -159,7 +165,7 @@ const ProjectDetails = async ({ params }: IProps) => {
 					</h1>
 					<ImageGallery images={data?.images} />
 
-					<div className="p-4 mt-10 bg-white rounded-lg shadow-md">
+					<div className="p-4 mt-10 bg-white dark:bg-slate-700 rounded-lg shadow-md">
 						<h3 className="text-3xl text-center font-bold pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent border-b-2 border-gray-300 pb-2 mb-4">
 							Features
 						</h3>
@@ -167,7 +173,7 @@ const ProjectDetails = async ({ params }: IProps) => {
 							{data?.description?.map((feature: string) => (
 								<li
 									key={feature}
-									className="px-3 py-2 bg-gray-100 rounded-md hover:bg-gray-200 transition duration-300"
+									className="px-3 py-2 bg-gray-100 rounded-md hover:bg-gray-200 transition duration-300 dark:bg-slate-800 dark:hover:bg-slate-900 dark:text-slate-300"
 								>
 									{feature}
 								</li>

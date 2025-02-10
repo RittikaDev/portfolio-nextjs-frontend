@@ -37,14 +37,14 @@ const Header = () => {
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ duration: 0.6, delay: 0.8 }}
-					className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-6"
+					className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-slate-300 mb-6"
 				>
 					Full-Stack Developer
 					<motion.p
 						initial={{ y: -20, opacity: 0 }}
 						whileInView={{ y: 0, opacity: 1 }}
 						transition={{ duration: 0.6, delay: 0.3 }}
-						className="mt-6 max-w-3xl text-xl sm:text-2xl mx-auto text-gray-700 font-medium"
+						className="mt-6 max-w-3xl text-xl sm:text-2xl mx-auto text-gray-700 dark:text-slate-400 font-medium"
 					>
 						I have more than 3 years of experience focusing on{" "}
 						<span className="text-teal-500">React</span>,{" "}

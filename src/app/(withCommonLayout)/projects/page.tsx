@@ -13,7 +13,7 @@ const Projects = async () => {
 	);
 	const { data } = await res.json();
 	return (
-		<section className="md:pt-10 pb-10">
+		<section className="md:pt-32 pb-10">
 			<div className="max-w-7xl mx-auto">
 				<TopSection />
 

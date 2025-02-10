@@ -25,7 +25,7 @@ const ContactManagement = () => {
 	return (
 		<div className="p-6">
 			<div className="flex justify-between items-center mb-4">
-				<h1 className="text-xl font-semibold">Messages</h1>
+				<h1 className="l font-semibold">Messages</h1>
 			</div>
 
 			{/* Display Messages Table */}

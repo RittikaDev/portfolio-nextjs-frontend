@@ -43,7 +43,9 @@ export default async function RootLayout({
 				<ThemeContextProvider>
 					{/* IF YOU SHOW NAVBAR ALL THE TIME EVEN DURING DASHBOARD, IF NOT COMMENT OUT */}
 					{/* <Navbar session={session} /> */}
-					<div className="min-h-screen ">{children}</div>
+					<div className="min-h-screen dark:bg-darkTheme bg-lightTheme">
+						{children}
+					</div>
 					<Toaster position="top-right" />
 					<ThemeSwitch />
 				</ThemeContextProvider>

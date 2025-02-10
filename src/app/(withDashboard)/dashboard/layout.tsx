@@ -14,10 +14,12 @@ export default function DashboardLayout({
 	return (
 		<div className="min-h-screen my-2">
 			<div className="flex justify-between">
-				<div className="w-[15%]">
+				<div className="w-[15%] dark:bg-slate-800 bg-slate-200">
 					<Sidebar />
 				</div>
-				<div className="w-[85%] bg-slate-100 rounded-xl ml-2">{children}</div>
+				<div className="w-[85%] dark:bg-darkTheme bg-lightTheme rounded-xl ml-2">
+					{children}
+				</div>
 			</div>
 		</div>
 	);
