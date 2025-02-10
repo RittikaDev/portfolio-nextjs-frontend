@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FaArrowLeft, FaClock } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
+
+import { FaArrowLeft, FaClock } from "react-icons/fa";
+
 import envConfig from "@/config/env.config";
+import ShinyButton from "@/components/ui/shiny-button";
 
 export interface IBlog {
 	_id: string;
@@ -39,15 +43,15 @@ const BlogDetail = async ({ params }: IProps) => {
 	return (
 		<section className="max-w-3xl mx-auto py-12 px-6 md:px-0 bg-gray-50 dark:bg-gray-800">
 			{/* Back to Blogs Button */}
-			<div className="mb-6">
-				<a
-					href="/blogs"
+			{/* <div className="mb-6">
+				<Link
+					href="/blog"
 					className="inline-flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition transform hover:scale-105"
 				>
 					<FaArrowLeft className="text-xl" />
 					Back to Blogs
-				</a>
-			</div>
+				</Link>
+			</div> */}
 
 			{/* Title */}
 			<h1 className="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight mb-4">
@@ -64,12 +68,13 @@ const BlogDetail = async ({ params }: IProps) => {
 			</div>
 
 			{/* Blog Cover Image */}
-			<div className="relative w-full h-80 md:h-[450px] overflow-hidden rounded-xl shadow-lg mb-8">
+			<div className="relative w-full h-50 md:h-[400px] overflow-hidden rounded-xl shadow-lg mb-8">
 				<Image
 					src={blog.cover}
 					alt={blog.title}
-					layout="fill"
-					objectFit="cover"
+					width={1100}
+					height={1200}
+					priority
 					className="rounded-xl transition-transform duration-500 hover:scale-110"
 				/>
 			</div>
@@ -141,14 +146,17 @@ const BlogDetail = async ({ params }: IProps) => {
 			<hr className="my-12 border-gray-300 dark:border-gray-600" />
 
 			{/* Back to Blogs Button */}
-			<div className="mt-6">
-				<a
-					href="/blogs"
-					className="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-blue-600 rounded-lg shadow-md hover:bg-blue-700 transition transform hover:scale-105"
-				>
-					<FaArrowLeft className="mr-2" />
-					Back to Blogs
-				</a>
+			<div className="mt-6 text-center">
+				<Link href={`/projects`}>
+					<ShinyButton>
+						<div className="flex space-x-2">
+							<FaArrowLeft className="mr-2 mt-1" />
+							<span className="capitalize text-base font-medium inline-block">
+								Back to Blogs
+							</span>
+						</div>
+					</ShinyButton>
+				</Link>
 			</div>
 		</section>
 	);

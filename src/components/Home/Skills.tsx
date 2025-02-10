@@ -44,10 +44,13 @@ const Skills = () => {
 	};
 
 	return (
-		<div className="max-w-7xl mx-auto">
-			<h2 className="mb-8 text-center text-3xl font-medium capitalize">
+		<div className="max-w-7xl mx-auto my-40">
+			{/* <h2 className="mb-8 text-center text-3xl font-medium capitalize">
 				Things I am Good At
-			</h2>
+			</h2> */}
+			<h1 className="mb-8 text-center font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent  dark:from-white dark:to-slate-900/10">
+				Things I am Good At
+			</h1>
 			<ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
 				{skills.data.map((skill, index) => (
 					<motion.li

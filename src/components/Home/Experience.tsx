@@ -20,36 +20,39 @@ const Experience = () => {
 		data: [
 			{
 				id: "1",
-				title: "Software Engineer",
-				location: "Dhaka, Bangladesh",
-				date: "Jan 2022 - Present",
+				title: "Graduated",
+				location: "Chittagong, Bangladesh",
+				date: "2021",
 				description:
-					"Developing and maintaining enterprise applications using Angular and .NET Core. Implementing new features, optimizing performance, and collaborating with cross-functional teams.",
+					"I graduated with a degree in Computer Science and Engineering (CSE). My academic journey in CSE has equipped me with a strong foundation in technology and problem-solving",
 			},
 			{
 				id: "2",
-				title: "Frontend Developer",
-				location: "Remote",
-				date: "Jul 2020 - Dec 2021",
+				title: "Intern Software Developer",
+				location: "KDS Group",
+				date: "August 2021 - Dec 2021",
 				description:
-					"Built interactive user interfaces using React.js and Tailwind CSS. Worked on improving user experience and enhancing application performance.",
+					"Mainly built the menu system for HRMS using Angular and Angular Material UI . Also worked on various side projects, enhancing my skills in web development.",
 			},
 			{
 				id: "3",
-				title: "Intern - Web Developer",
-				location: "Dhaka, Bangladesh",
-				date: "Jan 2020 - Jun 2020",
+				title: "Jr. Software Developer",
+				location: "KDS Group",
+				date: "Jan 2022 - Prsent",
 				description:
-					"Gained hands-on experience in full-stack development. Worked with a team on a CRM system using Vue.js and Firebase.",
+					"Worked on product-based projects, with a primary focus on developing HRMS and payroll systems using Angular, .NET Core, and Oracle. Gained hands-on experience in full-stack development, collaborating with a team to build efficient and scalable solutions.",
 			},
 		],
 	};
 
 	return (
 		<section id="experience" className="mb-28 scroll-mt-28 sm:mb-40">
-			<h2 className="mb-8 text-center text-3xl font-medium capitalize">
+			{/* <h2 className="mb-8 text-center text-3xl font-medium capitalize">
 				My experience
-			</h2>
+			</h2> */}
+			<h1 className="mb-8 text-center font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent  dark:from-white dark:to-slate-900/10">
+				My experience
+			</h1>
 			<VerticalTimeline lineColor="" animate={true}>
 				{experiences.data.map((item) => {
 					const experience = item;

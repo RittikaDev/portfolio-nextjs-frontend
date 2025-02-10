@@ -1,54 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
-import { useState, useEffect } from "react";
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "@/components/ui/table";
+import ContactManagement from "@/components/modules/Dashboard/ContactManagement/page";
+import { authOptions } from "@/utils/authOptions";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-const MessageTable = () => {
-	const [messages, setMessages] = useState<any[]>([]);
+const MessageTable = async () => {
+	const session = await getServerSession(authOptions);
 
-	useEffect(() => {
-		const fetchMessages = async () => {
-			const res = await fetch("http://localhost:5000/api/contact");
-			const { data } = await res.json();
-			setMessages(data);
-		};
-		fetchMessages();
-	}, []);
-
-	return (
-		<div className="p-6">
-			<div className="flex justify-between items-center mb-4">
-				<h1 className="text-xl font-semibold">Messages</h1>
-			</div>
-
-			{/* Display Messages Table */}
-			<Table>
-				<TableHeader>
-					<TableRow>
-						<TableHead>User Name</TableHead>
-						<TableHead>User Email</TableHead>
-						<TableHead>Message</TableHead>
-					</TableRow>
-				</TableHeader>
-				<TableBody>
-					{messages.map((message) => (
-						<TableRow key={message._id}>
-							<TableCell>{message.userName}</TableCell>
-							<TableCell>{message.userEmail}</TableCell>
-							<TableCell>{message.message}</TableCell>
-						</TableRow>
-					))}
-				</TableBody>
-			</Table>
-		</div>
-	);
+	// REDIRECT TO LOGIN PAGE IF SESSION IS NOT AVAILABLE
+	if (!session?.user) redirect("/login");
+	return <ContactManagement />;
 };
 
 export default MessageTable;

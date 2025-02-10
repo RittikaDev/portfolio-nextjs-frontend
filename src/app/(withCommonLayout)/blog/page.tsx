@@ -56,13 +56,11 @@ const page = async () => {
 			<div className="max-w-7xl mx-auto">
 				<div className="space-y-6">
 					<div>
-						<h1
-							className={`font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text leading-none text-transparent dark:from-white dark:to-slate-900/10 `}
-						>
+						<h1 className="my-12 text-center font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent  dark:from-white dark:to-slate-900/10">
 							Recent Blogs
 						</h1>
 					</div>
-					<div>
+					<div className="mt-10">
 						<BentoGrid>
 							{dynamicBlogs?.map((bento: IBento, index: number) => (
 								<BentoCard key={index} {...bento} />
@@ -70,19 +68,6 @@ const page = async () => {
 						</BentoGrid>
 					</div>
 				</div>
-
-				{/* <div className="flex justify-center mt-10">
-					<Link href={`/blogs`}>
-						<ShinyButton>
-							<div className="flex space-x-2">
-								<span className="capitalize text-base font-medium inline-block">
-									Read More
-								</span>
-								<ChevronRight />
-							</div>
-						</ShinyButton>
-					</Link>
-				</div> */}
 			</div>
 		</section>
 	);

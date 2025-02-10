@@ -24,10 +24,8 @@ const FeaturedProjects = async () => {
 		<section className="py-20" id="projects">
 			<div className="max-w-7xl mx-auto">
 				<div className="mb-10">
-					<h1
-						className={`font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text leading-none text-transparent dark:from-white dark:to-slate-900/10 `}
-					>
-						Projects
+					<h1 className=" text-center font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent  dark:from-white dark:to-slate-900/10">
+						Featured Projects
 					</h1>
 				</div>
 

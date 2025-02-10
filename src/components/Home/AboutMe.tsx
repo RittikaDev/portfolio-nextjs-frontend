@@ -1,6 +1,6 @@
 import { Spotlight } from "@/components/ui/spotlight";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
-import ResumeDropdown from "../modules/resume-dropdown";
+import ShinyButton from "../ui/shiny-button";
 
 const AboutMe = () => {
 	return (
@@ -18,11 +18,7 @@ const AboutMe = () => {
 				<div className="flex justify-center">
 					<div className="md:col-span-4 space-y-6 text-center md:text-left">
 						<div className="space-y-4 flex flex-col items-center text-center">
-							<h1
-								className="font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap 
-    bg-gradient-to-b from-black to-gray-300/80 bg-clip-text leading-none text-transparent 
-    dark:from-white dark:to-slate-900/10"
-							>
+							<h1 className="font-bold text-4xl md:text-5xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-teal-900 to-teal-400 bg-clip-text leading-none text-transparent  dark:from-white dark:to-slate-900/10">
 								About Me
 							</h1>
 							<p className="text-muted-foreground leading-relaxed max-w-2xl">
@@ -49,7 +45,16 @@ const AboutMe = () => {
 						</div>
 
 						<div className="flex justify-center">
-							<ResumeDropdown />
+							<ShinyButton>
+								<a
+									className="w-full block"
+									href="/RITTIKA_DEV.pdf"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Download Resume
+								</a>
+							</ShinyButton>
 						</div>
 					</div>
 				</div>
