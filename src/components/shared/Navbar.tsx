@@ -166,39 +166,47 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             />
           </div>
           <li>
-            <a href="#top" className="font-Ovo" onClick={closeMenu}>
+            <Link href="#top" className="font-Ovo" onClick={closeMenu}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#about" className="font-Ovo" onClick={closeMenu}>
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="font-Ovo" onClick={closeMenu}>
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="#experience" className="font-Ovo" onClick={closeMenu}>
-              Experience
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="font-Ovo" onClick={closeMenu}>
+            <Link href="/projects" className="font-Ovo" onClick={closeMenu}>
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#blog" className="font-Ovo" onClick={closeMenu}>
+            <Link href="/blog" className="font-Ovo" onClick={closeMenu}>
               Blogs
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact" className="font-Ovo" onClick={closeMenu}>
+            <Link href="/contact" className="font-Ovo" onClick={closeMenu}>
               Contact
-            </a>
+            </Link>
+          </li>
+          {session?.user && (
+            <li>
+              <Link
+                href="/dashboard"
+                className={` ${
+                  pathName === "/dashboard" ? "font-bold text-teal-600" : ""
+                }`}
+              >
+                Dashboard
+              </Link>
+            </li>
+          )}
+          <li>
+            {session?.user ? (
+              <Link href="/" onClick={handleLogout} className="font-Ovo">
+                LogOut
+              </Link>
+            ) : (
+              <Link href="/login" className="font-Ovo">
+                Login
+              </Link>
+            )}
           </li>
         </ul>
       </nav>
