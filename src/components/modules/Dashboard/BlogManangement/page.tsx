@@ -26,7 +26,9 @@ const BlogManagement = () => {
 
 	useEffect(() => {
 		const fetchblogs = async () => {
-			const res = await fetch("http://localhost:5000/api/blog");
+			const res = await fetch(
+				"https://portfolio-v2-alpha-woad.vercel.app/api/blog"
+			);
 			const { data } = await res.json();
 			console.log(data);
 			setBlogs(data);
@@ -71,11 +73,14 @@ const BlogManagement = () => {
 		};
 
 		console.log(blogData);
-		const res = await fetch("http://localhost:5000/api/blog", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(blogData),
-		});
+		const res = await fetch(
+			"https://portfolio-v2-alpha-woad.vercel.app/api/blog",
+			{
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(blogData),
+			}
+		);
 		const result = await res.json();
 		console.log(result);
 		setBlogs((prev) => [...prev, result.data]);
@@ -114,7 +119,7 @@ const BlogManagement = () => {
 	const handleSave = async () => {
 		if (isEditing) {
 			const res = await fetch(
-				`http://localhost:5000/api/blog/${editingblog._id}`,
+				`https://portfolio-v2-alpha-woad.vercel.app/api/blog/${editingblog._id}`,
 				{
 					method: "PUT",
 					headers: { "Content-Type": "application/json" },
@@ -135,9 +140,12 @@ const BlogManagement = () => {
 	};
 
 	const handleDelete = async (blogId: string) => {
-		const res = await fetch(`http://localhost:5000/api/blog/${blogId}`, {
-			method: "DELETE",
-		});
+		const res = await fetch(
+			`https://portfolio-v2-alpha-woad.vercel.app/api/blog/${blogId}`,
+			{
+				method: "DELETE",
+			}
+		);
 		if (res.ok) {
 			setBlogs((prev) => prev.filter((proj) => proj._id !== blogId));
 		}

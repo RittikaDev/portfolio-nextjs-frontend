@@ -28,7 +28,9 @@ const DashboardProjectTable = () => {
 
 	useEffect(() => {
 		const fetchProjects = async () => {
-			const res = await fetch("http://localhost:5000/api/projects/featured");
+			const res = await fetch(
+				"https://portfolio-v2-alpha-woad.vercel.app/api/projects/featured"
+			);
 			const { data } = await res.json();
 			console.log(data);
 			setProjects(data);
@@ -60,11 +62,14 @@ const DashboardProjectTable = () => {
 	};
 
 	const handleCreate = async () => {
-		const res = await fetch("http://localhost:5000/api/projects", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(formData),
-		});
+		const res = await fetch(
+			"https://portfolio-v2-alpha-woad.vercel.app/api/projects",
+			{
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			}
+		);
 		const result = await res.json();
 		console.log(result);
 		if (!result.success) toast.error(result.message);
@@ -86,7 +91,7 @@ const DashboardProjectTable = () => {
 	const handleSave = async () => {
 		if (isEditing) {
 			const res = await fetch(
-				`http://localhost:5000/api/projects/${editingProject._id}`,
+				`https://portfolio-v2-alpha-woad.vercel.app/api/projects/${editingProject._id}`,
 				{
 					method: "PUT",
 					headers: { "Content-Type": "application/json" },
@@ -107,9 +112,12 @@ const DashboardProjectTable = () => {
 	};
 
 	const handleDelete = async (projectId: string) => {
-		const res = await fetch(`http://localhost:5000/api/projects/${projectId}`, {
-			method: "DELETE",
-		});
+		const res = await fetch(
+			`https://portfolio-v2-alpha-woad.vercel.app/api/projects/${projectId}`,
+			{
+				method: "DELETE",
+			}
+		);
 		if (res.ok) {
 			toast.success("Deleted succesfully");
 			setProjects((prev) => prev.filter((proj) => proj._id !== projectId));

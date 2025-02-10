@@ -15,7 +15,9 @@ const ContactManagement = () => {
 
 	useEffect(() => {
 		const fetchMessages = async () => {
-			const res = await fetch("http://localhost:5000/api/contact");
+			const res = await fetch(
+				"https://portfolio-v2-alpha-woad.vercel.app/api/contact"
+			);
 			const { data } = await res.json();
 			setMessages(data);
 		};

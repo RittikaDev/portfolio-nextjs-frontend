@@ -31,10 +31,10 @@ const Contact = () => {
 		e.preventDefault();
 		setPending(true);
 		// console.log(`${envConfig.baseApi}/api/contact`);
-		// console.log(`http://localhost:5000/api/contact`);
+		// console.log(`https://portfolio-v2-alpha-woad.vercel.app//api/contact`);
 		try {
 			const response = await fetch(
-				`http://localhost:5000/api/contact` as string,
+				`https://portfolio-v2-alpha-woad.vercel.app/api/contact` as string,
 				{
 					method: "POST",
 					headers: {

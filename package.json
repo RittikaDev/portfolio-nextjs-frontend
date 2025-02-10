@@ -22,7 +22,7 @@
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.460.0",
     "motion": "^12.4.1",
-    "next": "^15.2.0-canary.47",
+    "next": "15.1.6",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

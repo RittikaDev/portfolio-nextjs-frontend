@@ -22,7 +22,7 @@ const LoginPage = () => {
 						className="flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg hover:scale-110 transform transition-all duration-300"
 						onClick={() =>
 							signIn("google", {
-								callbackUrl: "http://localhost:3000/dashboard",
+								callbackUrl: "https://rittikadev.vercel.app/dashboard",
 							})
 						}
 					>
@@ -38,7 +38,7 @@ const LoginPage = () => {
 						className="flex items-center justify-center w-16 h-16 bg-white rounded-full shadow-lg hover:scale-110 transform transition-all duration-300"
 						onClick={() =>
 							signIn("github", {
-								callbackUrl: "http://localhost:3000/dashboard",
+								callbackUrl: "https://rittikadev.vercel.app/dashboard",
 							})
 						}
 					>
