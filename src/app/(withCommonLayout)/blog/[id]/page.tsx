@@ -30,6 +30,34 @@ interface IProps {
 	}>;
 }
 
+export const generateStaticParams = async () => {
+	const res = await fetch(
+		"https://portfolio-v2-alpha-woad.vercel.app/api/blog"
+	);
+	const blogs = await res.json();
+
+	return blogs.data.slice(0, 5).map((blog: IBlog) => ({
+		id: blog._id,
+	}));
+};
+
+export async function generateMetadata({
+	params,
+}: {
+	params: Promise<{ id: string }>;
+}) {
+	const { id } = await params;
+
+	const res = await fetch(
+		`https://portfolio-v2-alpha-woad.vercel.app/api/blog/${id}`
+	);
+	const blog = await res.json();
+
+	return {
+		title: `Rittika Dev Blogs |  ${blog.data.title}`,
+	};
+}
+
 const BlogDetail = async ({ params }: IProps) => {
 	const { id } = await params;
 

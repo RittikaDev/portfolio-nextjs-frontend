@@ -3,6 +3,11 @@ import TopSection from "@/components/Home/Projects/top-section";
 import envConfig from "@/config/env.config";
 import { IProject } from "@/types";
 import React from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Rittika Dev | All Projects",
+};
 
 const Projects = async () => {
 	const res = await fetch(
