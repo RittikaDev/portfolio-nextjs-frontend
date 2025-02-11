@@ -1,4 +1,4 @@
-# Project Portfolio
+# Portfolio Frontend
 
 This is a personal project portfolio built using Next.Js mainly. It showcases various projects, with a focus on providing a smooth and interactive user experience through UI components and dynamic content loading.
 
@@ -46,7 +46,7 @@ To run the portfolio locally, follow these steps:
   GITHUB_ID=
   GITHUB_SECRET=
   GOOGLE_ID=
-  GOOGLE_SECRET=GOCSPX-
+  GOOGLE_SECRET=
   NEXTAUTH_SECRET=
   API_BASE_URL=
   ```
