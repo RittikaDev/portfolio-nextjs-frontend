@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import Navbar from "@/components/shared/Navbar";
 import { Outfit as OutfitFont, Ovo as OvoFont } from "next/font/google";
 import { ThemeContextProvider } from "@/context/theme-context";
 import { ThemeSwitch } from "@/components/modules/theme-switch";

@@ -3,6 +3,11 @@ import Experience from "@/components/Home/Experience";
 import Header from "@/components/Home/Header";
 import FeaturedProjects from "@/components/Home/Projects/FeaturedProjects";
 import Skills from "@/components/Home/Skills";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Rittika Dev | Home",
+};
 
 const HomePage = () => {
 	return (

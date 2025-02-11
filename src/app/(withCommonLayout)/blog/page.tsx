@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "RittikaDev | Blogs",
+	title: "Rittika Dev | Blogs",
 };
 
 interface IBento {
