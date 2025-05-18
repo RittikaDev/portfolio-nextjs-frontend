@@ -12,7 +12,7 @@ import CloseWhite from "@/../public/close-white.png";
 import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@/context/theme-context";
 import Link from "next/link";
-import { signOut } from "next-auth/react";
+// import { signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
 type UserProps = {
@@ -28,6 +28,8 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
   const pathName = usePathname();
   const sideMenuRef = useRef<HTMLUListElement>(null);
   const { theme } = useTheme();
+
+  console.log(session);
 
   const openMenu = () => {
     if (sideMenuRef.current)
@@ -45,9 +47,9 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
     });
   }, []);
 
-  const handleLogout = () => {
-    signOut({ callbackUrl: "/" });
-  };
+  // const handleLogout = () => {
+  //   signOut({ callbackUrl: "/" });
+  // };
 
   return (
     <>
@@ -113,7 +115,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               Contact
             </Link>
           </li>
-          {session?.user && (
+          {/* {session?.user && (
             <li>
               <Link
                 href="/dashboard"
@@ -124,7 +126,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
                 Dashboard
               </Link>
             </li>
-          )}
+          )} */}
         </ul>
 
         <button className="block md:hidden ml-44" onClick={openMenu}>
@@ -134,8 +136,8 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
             width={35}
           />
         </button>
-
-        <div>
+        <div className="hidden lg:flex items-center gap-3 px-10 py-2.5 rounded-full ml-4 font-Ovo transition-all duration-300"></div>
+        {/* <div>
           {session?.user ? (
             <Link
               href="/"
@@ -152,7 +154,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               Login
             </Link>
           )}
-        </div>
+        </div> */}
         {/* MOVILE MENU */}
         <ul
           ref={sideMenuRef}
@@ -185,7 +187,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
               Contact
             </Link>
           </li>
-          {session?.user && (
+          {/* {session?.user && (
             <li>
               <Link
                 href="/dashboard"
@@ -207,7 +209,7 @@ const Navbar = ({ session }: { session: UserProps | null }) => {
                 Login
               </Link>
             )}
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>
