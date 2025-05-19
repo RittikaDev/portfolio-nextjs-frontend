@@ -40,46 +40,46 @@ const Header = () => {
 					className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-slate-300 mb-6"
 				>
 					Full-Stack Developer
-					<motion.p
-						initial={{ y: -20, opacity: 0 }}
-						whileInView={{ y: 0, opacity: 1 }}
-						transition={{ duration: 0.6, delay: 0.3 }}
-						className="mt-6 max-w-3xl text-xl sm:text-2xl mx-auto text-gray-700 dark:text-slate-400 font-medium"
-					>
-						I have more than 3 years of experience focusing on{" "}
-						<span className="text-teal-500">React</span>,{" "}
-						<span className="text-teal-500">Next</span>, &{" "}
-						<span className="text-teal-500">Angular</span>.
-					</motion.p>
-					<div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-6">
-						<motion.div
-							initial={{ y: 30, opacity: 0 }}
-							whileInView={{ y: 0, opacity: 1 }}
-							transition={{ duration: 0.6, delay: 1 }}
-						>
-							<Link
-								href="/contact"
-								className="px-8 py-2 border border-teal-500 rounded-full bg-teal-500 text-white text-lg font-semibold flex items-center gap-2 hover:bg-teal-600"
-							>
-								Contact Me
-								<ArrowRight className="w-4" />
-							</Link>
-						</motion.div>
-						<motion.div
-							initial={{ y: 30, opacity: 0 }}
-							whileInView={{ y: 0, opacity: 1 }}
-							transition={{ duration: 0.6, delay: 1.2 }}
-						>
-							<Link
-								href="/projects"
-								className="px-8 py-2 border rounded-full border-gray-500 text-lg font-semibold flex items-center gap-2 hover:bg-gray-200"
-							>
-								Check My Works
-								<ArrowRight className="w-4" />
-							</Link>
-						</motion.div>
-					</div>
 				</motion.h1>
+				<motion.p
+					initial={{ y: -20, opacity: 0 }}
+					whileInView={{ y: 0, opacity: 1 }}
+					transition={{ duration: 0.6, delay: 0.3 }}
+					className="mt-6 max-w-3xl text-xl sm:text-2xl mx-auto text-gray-700 dark:text-slate-400 font-medium"
+				>
+					I have more than 3 years of experience focusing on{" "}
+					<span className="text-teal-500">React</span>,{" "}
+					<span className="text-teal-500">Next</span>, &{" "}
+					<span className="text-teal-500">Angular</span>.
+				</motion.p>
+				<div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-6">
+					<motion.div
+						initial={{ y: 30, opacity: 0 }}
+						whileInView={{ y: 0, opacity: 1 }}
+						transition={{ duration: 0.6, delay: 1 }}
+					>
+						<Link
+							href="/contact"
+							className="px-8 py-2 border border-teal-500 rounded-full bg-teal-500 text-white text-lg font-semibold flex items-center gap-2 hover:bg-teal-600"
+						>
+							Contact Me
+							<ArrowRight className="w-4" />
+						</Link>
+					</motion.div>
+					<motion.div
+						initial={{ y: 30, opacity: 0 }}
+						whileInView={{ y: 0, opacity: 1 }}
+						transition={{ duration: 0.6, delay: 1.2 }}
+					>
+						<Link
+							href="/projects"
+							className="px-8 py-2 border rounded-full border-gray-500 text-lg font-semibold flex items-center gap-2 hover:bg-gray-200"
+						>
+							Check My Works
+							<ArrowRight className="w-4" />
+						</Link>
+					</motion.div>
+				</div>
 			</div>
 		</div>
 	);
