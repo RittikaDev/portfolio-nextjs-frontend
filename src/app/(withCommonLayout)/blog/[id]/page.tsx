@@ -63,19 +63,22 @@ export async function generateMetadata({
 const BlogDetail = async ({ params }: IProps) => {
 	const { id } = await params;
 
-	// Fetch project details from API using id
+	// FETCH PROJECT DETAILS FROM API USING ID
 	const res = await fetch(`${envConfig.baseApi}/api/blog/${id}` as string);
 	const { data } = await res.json();
 	const blog = data;
-	const htmlString = blog.content
-		.map((block: any) => {
-			// Create a shallow copy without _id
-			const { _id, ...rest } = block;
-			// Join all values of the remaining fields into a string
-			console.log(_id);
-			return Object.values(rest).flat().join("");
-		})
-		.join("");
+	// console.log(blog.content);
+
+	// BELOW CODE WAS FOR CONVERTING THE CONTENT ARRAY TO HTML STRING, BECAUSE CONTENT WAS NOT COMING AS AN HTML STRING
+	// const htmlString = Array.isArray(blog.content)
+	// 	? blog.content
+	// 			.map((block: any) => {
+	// 				const { _id, ...rest } = block;
+	// 				console.log(_id);
+	// 				return Object.values(rest).flat().join("");
+	// 			})
+	// 			.join("")
+	// 	: "";
 
 	// console.log(htmlString);
 
@@ -83,23 +86,12 @@ const BlogDetail = async ({ params }: IProps) => {
 
 	return (
 		<section className="max-w-3xl mx-auto py-12 px-6 md:px-0 bg-gray-50 dark:bg-gray-800">
-			{/* Back to Blogs Button */}
-			{/* <div className="mb-6">
-				<Link
-					href="/blog"
-					className="inline-flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 transition transform hover:scale-105"
-				>
-					<FaArrowLeft className="text-xl" />
-					Back to Blogs
-				</Link>
-			</div> */}
-
-			{/* Title */}
+			{/* TITLE */}
 			<h1 className="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white leading-tight mb-4">
 				{blog.title}
 			</h1>
 
-			{/* Meta Info */}
+			{/* META INFO */}
 			<div className="flex items-center gap-4 text-gray-500 dark:text-gray-400 text-sm mb-6">
 				<span>{blog.publishedDate}</span>
 				<span className="flex items-center gap-1">
@@ -108,7 +100,7 @@ const BlogDetail = async ({ params }: IProps) => {
 				</span>
 			</div>
 
-			{/* Blog Cover Image */}
+			{/* BLOG COVER IMAGE */}
 			<div className="relative w-full h-50 md:h-[400px] overflow-hidden rounded-xl shadow-lg mb-8">
 				<Image
 					src={blog?.cover || null}
@@ -120,12 +112,12 @@ const BlogDetail = async ({ params }: IProps) => {
 				/>
 			</div>
 
-			{/* Blog Content */}
-			<BlogContent htmlString={htmlString} />
-			{/* Bottom Divider */}
+			{/* BLOG CONTENT */}
+			<BlogContent htmlString={blog.content} />
+			{/* BOTTOM DIVIDER */}
 			<hr className="my-12 border-gray-300 dark:border-gray-600" />
 
-			{/* Back to Blogs Button */}
+			{/* BACK TO BLOGS BUTTON */}
 			<div className="mt-6 text-center">
 				<Link href={`/projects`}>
 					<ShinyButton>

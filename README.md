@@ -43,11 +43,6 @@ To run the portfolio locally, follow these steps:
 - **Create a `.env` file in the root directory of the project with the following environment variables**:
 
   ```env
-  GITHUB_ID=
-  GITHUB_SECRET=
-  GOOGLE_ID=
-  GOOGLE_SECRET=
-  NEXTAUTH_SECRET=
   API_BASE_URL=
   ```
 
