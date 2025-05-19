@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 interface IProps {
-	images: string[]; // Array of image URLs
+	images: string[]; // ARRAY OF IMAGE URLS
 }
 
 const ImageGallery = ({ images }: IProps) => {
@@ -15,7 +15,7 @@ const ImageGallery = ({ images }: IProps) => {
 					className="group relative w-full h-full rounded-lg overflow-hidden transition-all duration-300 ease-in-out"
 				>
 					<Image
-						src={image}
+						src={image ?? null}
 						alt={`Image ${idx + 1}`}
 						width={500}
 						height={500}

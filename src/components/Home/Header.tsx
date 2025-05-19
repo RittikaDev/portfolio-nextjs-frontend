@@ -19,7 +19,7 @@ const Header = () => {
 					transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
 				>
 					<Image
-						src={Profile}
+						src={Profile ?? null}
 						alt="profile"
 						className="rounded-full w-28 h-28 md:w-48 md:h-48"
 					/>
@@ -31,7 +31,7 @@ const Header = () => {
 					className="flex items-end gap-2 text-lg sm:text-xl md:text-2xl mb-6 font-Poppins"
 				>
 					Rittika Dev
-					<Image src={HandIcon} alt="hand-icon" className="w-6 mb-1" />
+					<Image src={HandIcon ?? null} alt="hand-icon" className="w-6 mb-1" />
 				</motion.h3>
 				<motion.h1
 					initial={{ opacity: 0 }}

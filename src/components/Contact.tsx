@@ -16,10 +16,10 @@ const Contact = () => {
 	});
 
 	const [pending, setPending] = useState(false);
-	const [isClient, setIsClient] = useState(false); // State to check if we're on the client
+	const [isClient, setIsClient] = useState(false);
 
 	useEffect(() => {
-		setIsClient(true); // This will set `isClient` to true only after the component is mounted on the client
+		setIsClient(true);
 	}, []);
 
 	const handleChange = (e: any) => {
